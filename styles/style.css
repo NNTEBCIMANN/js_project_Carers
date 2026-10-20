@@ -36,6 +36,7 @@ header{
 }
 .logoutBtn{
     background-color: brown;
+    display: none;
 }
 .startingSection{
     height: 700px;
@@ -61,6 +62,9 @@ header{
 }
 .contactUs{
     background-color: rgb(243 79 106);
+}
+.contactInfo{
+    display: none;
 }
 .images{
     padding: 100px;
