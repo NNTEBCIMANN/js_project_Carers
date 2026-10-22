@@ -17,7 +17,7 @@
             <a href="#" class="navLinks">CONTACT</a>
         </nav>
         <div class="btnDiv">
-            <h2 class="greet"></h2>
+            <h2 id="userMail"></h2>
             <button class="btn loginBtn">Log In</button>
             <button class="btn logoutBtn">Log Out</button>
         </div>
@@ -40,10 +40,13 @@
             <img src="images/catFour.jpg" alt="Kittens" class="catalogImg">
         </section>
         <div class="formDiv">
-            <form action="">
+            <form id="loginForm">
                 <label for="email">Log In With Email</label>
                 <input type="email" name="email" id="email" required>
-                <button class="btn emailLogin">Log In</button>
+                <label for="password">Enter Your Password</label>
+                <input type="password" required name="password" id="password">
+                <p id="notFound"></p>
+                <button type="submit" class="btn emailLogin">Log In</button>
             </form>
         </div>
     </main>

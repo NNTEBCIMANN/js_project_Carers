@@ -26,6 +26,11 @@ header{
     font-weight: 700;
     color: #fff;
 }
+#userMail{
+    font-size: 24px;
+    margin: 4px;
+    color: white;
+}
 .btn{
     border: none;
     padding: 10px 15px;
@@ -37,6 +42,9 @@ header{
 .logoutBtn{
     background-color: brown;
     display: none;
+}
+.btnDiv{
+    display: flex;
 }
 .startingSection{
     height: 700px;
@@ -64,6 +72,9 @@ header{
     background-color: rgb(243 79 106);
 }
 .contactInfo{
+    display: none;
+}
+#notFound{
     display: none;
 }
 .images{
