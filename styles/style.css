@@ -76,6 +76,13 @@ header{
 }
 #notFound{
     display: none;
+    color: red;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 14px;
+    font-weight: 700;
 }
 .images{
     padding: 100px;
@@ -97,6 +104,26 @@ header{
     background-color: antiquewhite;
     border-radius: 14px;
     display: none;
+}
+.regDiv{
+    width: 300px;
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    padding: 30px;
+    background-color: antiquewhite;
+    border-radius: 14px;
+    display: none;
+}
+#reged{
+    display: none;
+    color: green;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 14px;
+    font-weight: 700;
 }
 form{
     display: flex;

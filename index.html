@@ -20,6 +20,7 @@
             <h2 id="userMail"></h2>
             <button class="btn loginBtn">Log In</button>
             <button class="btn logoutBtn">Log Out</button>
+            <button class="btn loginBtn regBtn">Register</button>
         </div>
     </header>
     <main>
@@ -42,11 +43,21 @@
         <div class="formDiv">
             <form id="loginForm">
                 <label for="email">Log In With Email</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="logEmail" id="logMail" placeholder="Mail@gmail.com" required>
                 <label for="password">Enter Your Password</label>
-                <input type="password" required name="password" id="password">
+                <input type="password" name="password" id="logPass" placeholder="PassWord.1234" required>
                 <p id="notFound"></p>
                 <button type="submit" class="btn emailLogin">Log In</button>
+            </form>
+        </div>
+        <div class="regDiv">
+            <form id="regForm">
+                <label for="email">Register Via Email</label>
+                <input type="email" name="email" id="regMail" placeholder="Mail@gmail.com" required>
+                <label for="password">Create a Strong Password</label>
+                <input type="password" required name="regPass" id="regPass" placeholder="PassWord.1234">
+                <p id="reged"></p>
+                <button type="submit" class="btn emailLogin regSubmit">Register</button>
             </form>
         </div>
     </main>
