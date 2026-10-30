@@ -24,13 +24,15 @@ let users = [];                                         // /\
 
 
 btn.addEventListener("click", function(){               // \/
-    if(txt.style.display == "none"){                    // \/
-        txt.style.display = "block";                    // \/
-        btn.style.border = "3px solid black";           // Show/Hide
-        txt.style.fontWeight = "700";                   // Contact
-    }else{                                              // Info on
-        txt.style.display = "none";                     // Button
-        btn.style.border = "none";                      // Click
+    if(txt.style.display == "none" || txt.style         // \/
+        .display == ""                                  // \/
+    ){                                                  // \/
+        txt.style.display = "block";                    // Show/Hide
+        btn.style.border = "3px solid black";           // Contact
+        txt.style.fontWeight = "700";                   // Info On
+    }else{                                              // Button
+        txt.style.display = "none";                     // Click
+        btn.style.border = "none";                      // /\
         txt.style.fontWeight = "200";                   // /\
     }                                                   // /\
 });                                                     // /\
@@ -57,12 +59,14 @@ dark.addEventListener("click", function(){              // \/
 
 
 logInBtn.addEventListener("click", function(){          // \/
-    if(form.style.display == "none"){                   // \/
-        regDiv.style.display = "none";                  // FormDiv
-        form.style.display = "block";                   // Show/Hide
-        notFound.style.display = "none";                // on
-    }else{                                              // Button
-        form.style.display = "none";                    // Click
+    if(form.style.display == "none" || form.style       // \/
+        .display == ""                                  // \/
+    ){                                                  // FormDiv
+        regDiv.style.display = "none";                  // Show/Hide
+        form.style.display = "block";                   // On
+        notFound.style.display = "none";                // Button
+    }else{                                              // Click
+        form.style.display = "none";                    // /\
     }                                                   // /\
 });                                                     // /\
 
@@ -73,24 +77,28 @@ loginForm.addEventListener("submit", function(el){      // \/
     .value.toLowerCase();                               // \/
     let pass = document.getElementById("logPass")       // \/
     .value;                                             // \/
+    let user = false;                                   // \/
     if(users.length){                                   // \/
         for (let i = 0; i < users.length; i++) {        // \/
             if(mail == users[i][0] &&                   // \/
                pass == users[i][1]){                    // \/
-                form.style.display = "none";            // \/
-                userMail.innerHTML = mail;              // \/
-                userMail.style.display = "block";       // \/
-                logInBtn.style.display = "none";        // Full
-                logOutBtn.style.display = "block";      // Validational
-                regBtn.style.display = "none";          // LogIn
-                break;                                  // Logic
+                user = true;                            // \/
+                break;                                  // \/
+            };                                          // \/
+        };                                              // \/
+            if(user){                                   // Full
+                form.style.display = "none";            // Validational
+                userMail.innerHTML = mail;              // LogIn
+                userMail.style.display = "block";       // Logic
+                logInBtn.style.display = "none";        // /\
+                logOutBtn.style.display = "block";      // /\
+                regBtn.style.display = "none";          // /\
             }else{                                      // /\
                 notFound.style.display = "block";       // /\
                 notFound.style.color = "red";           // /\
                 notFound.innerHTML =                    // /\
                 "User Not Found!";                      // /\
             };                                          // /\
-        };                                              // /\
     }else{                                              // /\
         notFound.style.display = "block";               // /\
         notFound.style.color = "red";                   // /\
@@ -109,12 +117,14 @@ logOutBtn.addEventListener("click", function(){         // \/
 
 
 regBtn.addEventListener("click", function(){            // \/
-    if(regDiv.style.display == "none"){                 // \/
-        form.style.display = "none";                    // RegDiv
-        regDiv.style.display = "block";                 // Show/Hide
-        reged.style.display = "none";                   // On
-    }else{                                              // Button
-        regDiv.style.display = "none";                  // Click
+    if(regDiv.style.display == "none" || regDiv.style   // \/
+        .display == ""                                  // \/
+    ){                                                  // RegDiv
+        form.style.display = "none";                    // Show/Hide
+        regDiv.style.display = "block";                 // On
+        regTxt.style.display = "none";                  // Button
+    }else{                                              // Click
+        regDiv.style.display = "none";                  // /\
     };                                                  // /\
 });                                                     // /\
 
@@ -130,24 +140,27 @@ regForm.addEventListener("submit", function(e){         // \/
         for (let i = 0; i < users.length; i++) {        // \/
             if(users[i][0] == mail){                    // \/
                 newUser = false;                        // \/
-                reged.innerHTML =                       // \/
-                "Email Already Registered";             // \/
-                reged.style.display = "block";          // \/
-                reged.style.color = "red";              // Full
-                reged.style.borderColor = "red";        // Validational
-                break;                                  // Registration
-            };                                          // Logic
-        };                                              // /\
-        if(newUser){                                    // /\
-            users.push([mail, pass]);                   // /\
-            reged.innerHTML =                           // /\
+                break;                                  // \/
+            };                                          // \/
+        };                                              // \/
+        if(newUser){                                    // \/
+            users.push([mail, pass]);                   // \/
+            regTxt.style.borderColor = "green";         // Full
+            regTxt.style.color = "green";               // Registration
+            regTxt.innerHTML =                          // Logic
             "Successfully Registered!";                 // /\
-            reged.style.display = "block";              // /\
-        }                                               // /\
+            regTxt.style.display = "block";             // /\
+        }else{                                          // /\
+            regTxt.innerHTML =                          // /\
+            "Email Already Registered";                 // /\
+            regTxt.style.display = "block";             // /\
+            regTxt.style.color = "red";                 // /\
+            regTxt.style.borderColor = "red";           // /\
+        };                                              // /\
     }else{                                              // /\
         users.push([mail, pass]);                       // /\
-        reged.innerHTML =                               // /\
+        regTxt.innerHTML =                              // /\
         "Successfully Registered!";                     // /\
-        reged.style.display = "block";                  // /\
+        regTxt.style.display = "block";                 // /\
     };                                                  // /\
 });                                                     // /\
